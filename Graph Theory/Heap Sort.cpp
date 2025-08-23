@@ -7,13 +7,13 @@ void heapify(int arr[],int n,int i)
     int largest=i;
     int left_child=2*i+1;
     int right_child=2*i+2;
-    
+
     if(right_child<n && arr[right_child]>arr[largest])
         largest=right_child;
-        
+
     if(left_child<n && arr[left_child]>arr[largest])
         largest=left_child;
-        
+
     if(largest!=i)
     {
         swap(arr[i],arr[largest]);
@@ -48,31 +48,36 @@ void solve()
 }
 
 
-                 ///priority_queue?
+///                               priority_queue?
 // A priority queue is a type of queue where elements are served based on priority, not order of insertion.
 
-//Syntax
+///                                 Syntax
 //priority_queue<Type> pq;   // Max Heap (default)
 //priority_queue<Type, vector<Type>, greater<Type>> min_pq; // Min Heap
 
 
-//With Custom Comparator (example: sort by second value in pair)
+///           With Custom Comparator (example: sort by second value in pair)
 
-struct Compare {
-    bool operator()(pair<int,int> a, pair<int,int> b) {
+struct Compare
+{
+    bool operator()(pair<int,int> a, pair<int,int> b)
+    {
         return a.second > b.second; // Min Heap based on second value
     }
 };
 
-int main() {
+int main()
+{
     priority_queue<pair<int,int>, vector<pair<int,int>>, Compare> pq;
 
     pq.push({1, 50});
     pq.push({2, 30});
     pq.push({3, 40});
 
-    while (!pq.empty()) {
+    while (!pq.empty())
+    {
         cout << pq.top().first << " " << pq.top().second << endl;
         pq.pop();
     }
 }
+

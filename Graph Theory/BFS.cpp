@@ -1,6 +1,8 @@
 //Breadth First Search (BFS) is a graph traversal algorithm. It starts from a source node and explores all neighbors first (level by //level) before moving to the next level.
 
-
+#include <bits/stdc++.h>
+using namespace std;
+#define fio ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL)
 const int N = 1e5 + 9;
 vector<int>g[N];
 bool vis[N];
@@ -44,7 +46,24 @@ void solve()
     }
 
 }
+int32_t main()
+{
+    fio;
+#ifdef _Local
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+    int T = 1;
+    //cin >> T;
+    for (int __ = 1; __ <= T; __++)
+    {
+        // cout << "Case " << __ << ": ";
+        solve();
+    }
+    return 0;
+}
+
 
 //Time & Space Complexity
 //O(V + E) for adjacency list
-//O(VÂ²) for adjacency matrix
+//O(V²) for adjacency matrix
